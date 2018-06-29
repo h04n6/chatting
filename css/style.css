@@ -9,24 +9,67 @@ body{
 .col-sm-3{
 	padding: 0;
 	margin: 0;
-	border-right: solid 0.5px black;
+	border-right: solid 1px lightgray;
+	background-color: white;
+}
+.form-group{
+	margin-top: 10px;
+	margin-left: 10px;
 }
 #messenger-title{
 	width: 100%;
 	height: 32px;
 }
-#messenger-title table{
+#table-title{
 	width: 100%;
 	height: 32px;
 }
-#messenger-title p{
-	text-align: center;
-	font-family: Consolas;
-	font-size: 18px;
+.line{
+	width: 100%;
+	border-bottom: 1px solid lightgray;
+	margin-top: 10px;
 }
 #icon-setting{
 	text-align: left;
 }
 #icon-new-message{
 	text-align: right;
+}
+#title-messenger{
+	text-align: center;
+	font-family: Consolas;
+	font-size: 18px;
+}
+#search{
+	background: url("../icon/search-messenger.png") no-repeat scroll 5px;
+	padding-left: 30px;
+}
+
+
+.avatar{
+	border-radius: 50%;
+	border: solid 1px black;
+	margin: 5px;
+}
+.name, .last-message{
+
+}
+#table-list-friend tr td:first-child{
+	width: 65px;
+}
+#table-list-friend tr td:nth-child(2){
+	text-align: left;
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+}
+#table-list-friend tr:hover{
+	background-color: lightgray;
+	border-radius: 10px;
+}
+#table-list-friend p{
+	text-align: left;
+	padding: 1px;
+	margin: 0px 5px;
+	width: 100%;
 }

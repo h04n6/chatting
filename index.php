@@ -14,28 +14,43 @@
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body onload="load_page('1')">
 	<div id="main-content">
 		<div class="row">
-			<div class="col-sm-3" style="background-color: white">
+			<div class="col-sm-3">
 				<div class="form-group">
-					<table>
+					<table id="table-title">
 						<tr>
-							<td id="icon-setting"><a href="settings.php"><img src="icon/setting.png"></a></td>
+							<td id="icon-setting"><a href="load_page('1')"><img src="icon/setting.png"></a></td>
 							<td id="title-messenger">Messenger</td>
 							<td id="icon-new-message"><a href="new-message.php" ><img src="icon/new-message.png"></a></td>
 						</tr>
-					</table>												
+					</table>
+					<div class="line"></div>
 				</div>
 				<div class="form-group">
-					<input placeholder="Search Messenger" type="text" name="search_" id="search-" class="form-control">
+					<input placeholder="Search Messenger" type="text" name="search" id="search" class="form-control">
 				</div>
-				<div>
-					<?php  ?>
+				<div class="form-group" id="list-friend">
+					
 				</div>
 			</div>
 			<div class="col-sm-9" style="background-color: orange"></div>
 		</div>
 	</div>
 </body>
+
+<script>
+	function load_page($user_id){
+		if($user_id == ""){
+			alert("ERROR!");
+		}else{
+			$.get("list-friend.php?userid=" + $user_id, function(data, status){
+				if(status == "success"){
+					document.getElementById("list-friend").innerHTML = data;
+				}
+			})
+		}
+	}
+</script>
 </html>
